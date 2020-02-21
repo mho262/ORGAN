@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:app/widget.dart';
 
+import 'package:flutter_calendar/flutter_calendar.dart';
+
 //import 'updatedPages.dart';
 
 void main() => runApp(MyApp());
@@ -92,6 +94,7 @@ class UpdatesPage extends StatelessWidget {
             RaisedButton.icon(
               icon: Icon(Icons.local_pharmacy),
               label: Text("Medications"),
+              color: Colors.white,
               onPressed: () {
                 Navigator.pushNamed(context, '/medicationsPage');
               },
@@ -99,18 +102,21 @@ class UpdatesPage extends StatelessWidget {
             RaisedButton.icon(
                 icon: Icon(Icons.calendar_today),
                 label: Text("Appointments"),
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pushNamed(context, '/appointmentsPage');
                 }),
             RaisedButton.icon(
                 icon: Icon(Icons.trending_down),
                 label: Text("Symptoms"),
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pushNamed(context, '/symptomsPage');
                 }),
             RaisedButton.icon(
                 icon: Icon(Icons.wb_sunny),
                 label: Text("Daily Routine"),
+                color: Colors.white,
                 onPressed: () {
                   Navigator.pushNamed(context, '/dailyPage');
                 }),
@@ -372,6 +378,18 @@ class CalendarPage extends StatelessWidget {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Calendar"),
+      ),
+      body: new SafeArea(
+        top:false,
+        bottom:false,
+        child: new ListView(
+          shrinkWrap:true,
+          children:<Widget>[
+            new Calendar(
+              isExpandable: true
+            )
+          ]
+          )
       ),
       bottomNavigationBar: ReusableWidgets.getAppBar(context)
     );
