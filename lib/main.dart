@@ -37,21 +37,14 @@ class MyApp extends StatelessWidget {
           '/symptomsPage': (BuildContext context) => SymptomsPage(),
           '/appointmentsPage': (BuildContext context) => AppointmentsPage(),
           '/dailyPage': (BuildContext context) => DailyPage(),
+          '/profilePage': (BuildContext context) => ProfilePage(),
+          '/userProfilePage': (BuildContext context) => UserProfilePage(),
         });
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -66,21 +59,353 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Center(
-          child: const Text(
-            " Good Morning, Noshin",
-            style: TextStyle(
-              fontSize: 45.0,
-              fontFamily: 'Arial',
-              color: Colors.green,
-              fontWeight: FontWeight.w600,
-            ),
+         body: Column(
+            children: <Widget>[
+              Image.asset(
+                'assets/images/organ.png',
+                width: 480.0,
+                height: 180.0,
+              ),
+              Container(
+                height: 100,
+                child: Text(
+                    " Good Morning, Hemi",
+                    style: TextStyle(
+                    fontSize: 43.0,
+                    fontFamily: 'Arial',
+                    color: Colors.green,
+                    fontWeight: FontWeight.w700,
+                    height: 1.0,
+                  ),textAlign: TextAlign.center,
+                ),
+              ),
+             Container(
+                height: 80,
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    new Text("Medication: take one pill of prozac,\n\n 1h ago",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                    new Icon(Icons.notification_important,
+                          color: Colors.blue,
+                          size: 30.0,
+                    )
+                  ]
+              ),
+             ),
+             Container(
+                height: 80,
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    new Text("Medication: take one pill of prozac,\n\n 1h ago",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                    new Icon(Icons.notification_important,
+                          color: Colors.blue,
+                          size: 30.0,
+                    )
+                  ]
+              ),
+             ),
+             Container(
+                height: 80,
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    new Text("Medication: take one pill of prozac,\n\n 1h ago",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                    new Icon(Icons.notification_important,
+                          color: Colors.blue,
+                          size: 30.0,
+                    )
+                  ]
+              ),
+             ),
+            ],
           ),
-        ),
+
         bottomNavigationBar: ReusableWidgets.getAppBar(context));
   }
 }
 
+class ProfilePage extends StatefulWidget {
+  ProfilePage({Key key, this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Directory"),
+        ),
+         body: Column(
+            children: <Widget>[
+              Container(
+                height: 130,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      'assets/images/organ.png',
+                      width: 200.0,
+                      height: 100.0,
+                    ),
+                    new Text("Files Directory",
+                    style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'Arial',
+                    color: Colors.black45,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ],
+              ),
+             ),
+             Container(
+               height: 48,
+              decoration: BoxDecoration(
+                color: Colors.lightBlueAccent,
+                borderRadius: BorderRadius.all(Radius.circular(32)),
+              ),
+              child: TextField(
+                  decoration: InputDecoration(
+                  hintStyle: TextStyle(fontSize: 15),
+                  hintText: 'Advil  ',
+                  suffixIcon: Icon(Icons.search),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.all(15),
+                ),
+              ),
+            ),
+            Container(
+                height: 55,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("TOP HITS",
+                    style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  ],
+                ),
+            ),
+            Container(
+                height: 18,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.arrow_right,
+                          color: Colors.blue,
+                          size: 25.0,
+                    ),
+                    new Text("Period",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            Container(
+                height: 18,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.arrow_right,
+                          color: Colors.blue,
+                          size: 25.0,
+                    ),
+                    new Text("Back Pain",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            Container(
+                height: 18,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.arrow_right,
+                          color: Colors.blue,
+                          size: 25.0,
+                    ),
+                    new Text("Arthritis",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            Container(
+                height: 55,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("Documents",
+                    style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  ],
+                ),
+            ),
+            Container(
+                height: 30,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.folder,
+                          color: Colors.blue,
+                          size: 21.0,
+                    ),
+                    new Text("Jaw Surgery",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            Container(
+                height: 30,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.folder,
+                          color: Colors.blue,
+                          size: 21.0,
+                    ),
+                    new Text("High Blood Pressure",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            Container(
+                height: 30,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.folder,
+                          color: Colors.blue,
+                          size: 21.0,
+                    ),
+                    new Text("Period",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            Container(
+                height: 30,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.folder,
+                          color: Colors.blue,
+                          size: 21.0,
+                    ),
+                    new Text("Kidney Removl Surgery",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            Container(
+                height: 30,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    new Icon(Icons.folder,
+                          color: Colors.blue,
+                          size: 21.0,
+                    ),
+                    new Text("Back Pain",
+                    style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  ]
+                ),
+            ),
+            ],
+         ),
+        bottomNavigationBar: ReusableWidgets.getAppBar(context));
+
+  }
+}
 class UpdatesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -88,49 +413,299 @@ class UpdatesPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Updates Page'),
         ),
-        body: GridView.count(
-          crossAxisCount: 2,
+        body:
+        new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            RaisedButton.icon(
-              icon: Icon(Icons.local_pharmacy),
-              label: Text("Medications"),
-              color: Colors.white,
-              onPressed: () {
-                Navigator.pushNamed(context, '/medicationsPage');
-              },
-            ),
-            RaisedButton.icon(
-                icon: Icon(Icons.calendar_today),
-                label: Text("Appointments"),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/appointmentsPage');
-                }),
-            RaisedButton.icon(
-                icon: Icon(Icons.trending_down),
-                label: Text("Symptoms"),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/symptomsPage');
-                }),
-            RaisedButton.icon(
-                icon: Icon(Icons.wb_sunny),
-                label: Text("Daily Routine"),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.pushNamed(context, '/dailyPage');
-                }),
-            Text("Update your health manager here",
-                style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Arial',
-                    color: Colors.green,
-                    fontWeight: FontWeight.w400))
+            new Image.asset(
+                'assets/images/organ.png',
+                width: 150.0,
+                height: 100.0,
+              ),
+            new Expanded(
+              child: GridView.count(
+                  crossAxisCount: 2,
+                  children: <Widget>[
+                    RaisedButton.icon(
+                      icon: Icon(Icons.local_pharmacy, 
+                      size: 40.0,
+                      color: Colors.white
+                    ),
+                      label: Text("Medications",
+                      style: TextStyle(
+                      fontSize: 18.0,
+                      fontFamily: 'Arial',
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                      color: Colors.blue,
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/medicationsPage');
+                      },
+                    ),
+                    RaisedButton.icon(
+                        icon: Icon(Icons.calendar_today, size: 40.0),
+                        label: Text("Appointments",
+                        style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Arial',
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        ),
+                       ),
+                        color: Colors.white,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/appointmentsPage');
+                        }),
+                    RaisedButton.icon(
+                        icon: Icon(Icons.trending_down, size: 40.0,),
+                        label: Text("Symptoms",
+                        style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Arial',
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                        color: Colors.white,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/symptomsPage');
+                        }),
+                    RaisedButton.icon(
+                        icon: Icon(Icons.wb_sunny, 
+                        size: 40.0,
+                        color: Colors.white
+                      ),
+                        label: Text("Daily Routine",
+                        style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Arial',
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                        color: Colors.blue,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/dailyPage');
+                        }),
+                  ],
+                ),
+                ),
           ],
         ),
         bottomNavigationBar: ReusableWidgets.getAppBar(context));
   }
 }
+
+class UserProfilePage extends StatefulWidget {
+  UserProfilePage({Key key, this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _UserProfilePageState createState() => _UserProfilePageState();
+}
+
+class _UserProfilePageState extends State<UserProfilePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("User Profile"),
+          actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.edit,
+            size: 30.0),
+            onPressed: () {
+            },
+          ),
+        ],
+        ),
+         body: Column(
+            children: <Widget>[
+              Image.asset(
+                'assets/images/hemi.png',
+                width: 400.0,
+                height: 150.0,
+              ),
+              Divider(),
+              Container(
+                height: 60,
+                child: Text(
+                    "Welcome, Hemi",
+                    style: TextStyle(
+                    fontSize: 35.0,
+                    fontFamily: 'Arial',
+                    color: Colors.green,
+                    fontWeight: FontWeight.w500,
+                    height: 1.0,
+                  ),textAlign: TextAlign.center,
+                ),
+              ),
+            IntrinsicHeight(
+            child: new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Text('27\nAge',
+              style: TextStyle(
+              fontSize: 18.0,
+              fontFamily: 'Arial',
+              color: Colors.blue,
+              fontWeight: FontWeight.w400,
+              ), textAlign: TextAlign.center),
+              VerticalDivider(color: Colors.black,
+                    thickness: 2, width: 20,),
+              Text('Female\nGender',
+              style: TextStyle(
+              fontSize: 18.0,
+              fontFamily: 'Arial',
+              color: Colors.blue,
+              fontWeight: FontWeight.w400,
+              ),textAlign: TextAlign.center),
+              VerticalDivider(color: Colors.black,
+                    thickness: 2, width: 20,),
+              Text('AB+\nBlood Group',
+              style: TextStyle(
+              fontSize: 18.0,
+              fontFamily: 'Arial',
+              color: Colors.blue,
+              fontWeight: FontWeight.w400,
+              ),textAlign: TextAlign.center),
+            ],
+          )),
+          Divider(),
+          Divider(
+              color: Colors.black,
+              thickness: 2, height: 2, endIndent: 20.0, indent: 20.0
+          ),
+          Container(
+                height: 40,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("Food Allergies",
+                    style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  ],
+                ),
+            ),
+            Container(
+                height: 20,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("Peanut, Dairy, Tomato, Egg, Chicken, Onion, Rice",
+                    style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: 'Arial',
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  ],
+                ),
+            ),
+            Divider(),
+            Container(
+                height: 40,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("Family History",
+                    style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  ],
+                ),
+            ),
+            Container(
+                height: 40,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("Diabetes: ",
+                    style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                new Text("Father has diabetes at age of 37",
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w400,
+                    ),)
+                  ],
+                ),
+            ),
+            Container(
+                height: 40,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("Gout: ",
+                    style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                new Text("Mother has problem ",
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w400,
+                    ),)
+                  ],
+                ),
+            ),
+            
+            Container(
+                height: 40,
+                width: 370,
+                child: new Row(
+                 mainAxisAlignment: MainAxisAlignment.start,
+                  children: [ new Text("Cancer: ",
+                    style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                new Text("My aunt has at age of 35",
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontFamily: 'Arial',
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w400,
+                    ),)
+                  ],
+                ),
+            ),
+          ],
+          ),
+          
+    bottomNavigationBar: ReusableWidgets.getAppBar(context));
+  }
+}
+
 
 class MedicationsPage extends StatefulWidget {
   MedicationsPage({Key key, this.title}) : super(key: key);
@@ -147,7 +722,15 @@ class _MedicationsPageState extends State<MedicationsPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Medication Updates"),
+        title: new Text("Medications"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.camera_alt,
+            size: 30.0),
+            onPressed: () {
+            },
+          ),
+        ],
       ),
       body: new SafeArea(
           top: false,
@@ -204,7 +787,7 @@ class _MedicationsPageState extends State<MedicationsPage> {
                       ),
                       keyboardType: TextInputType.text),
                   new Container(
-                      padding: const EdgeInsets.only(left: 40.0, top: 20.0),
+                      padding: const EdgeInsets.only(left: 20.0, top: 20.0),
                       child: new RaisedButton(
                         child: const Icon(Icons.arrow_forward),
                         onPressed: null,
@@ -232,7 +815,15 @@ class _SymptomsPageState extends State<SymptomsPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Status Updates"),
+        title: new Text("Symptoms"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.camera_alt,
+            size: 30.0),
+            onPressed: () {
+            },
+          ),
+        ],
       ),
       body: new SafeArea(
           top: false,
@@ -386,7 +977,7 @@ class CalendarPage extends StatelessWidget {
           shrinkWrap:true,
           children:<Widget>[
             new Calendar(
-              isExpandable: true
+              isExpandable: true,
             )
           ]
           )

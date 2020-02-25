@@ -35,12 +35,16 @@ class ReusableWidgets {
         IconButton(
           icon: Icon(Icons.local_pharmacy),
           color: Colors.blue,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/profilePage');
+          },
         ),
         IconButton(
           icon: Icon(Icons.person),
           color: Colors.blue,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/userProfilePage');
+          },
         )
       ],
     ));
